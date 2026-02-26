@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
        
             const li = document.createElement("ul")
             const link = document.createElement("a")
-            link.href=`${pages}/${page}`
+            link.href=`${page}`
             link.textContent = page;
             li.appendChild(link)
             list.appendChild(li)
