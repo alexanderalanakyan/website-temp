@@ -1,7 +1,7 @@
 import * as http from "node:http";
 import * as fs from "node:fs";
 import * as path from "node:path";
-
+const ignoredPaths = ["../www/", "404.html"]
 const publicDir = path.resolve(__dirname, ".."); // dist root after build
 
 const contentTypes: Record<string, string> = {
@@ -18,7 +18,8 @@ const contentTypes: Record<string, string> = {
 
 const server = http
   .createServer((req, res) => {
-    console.log(req.url)
+    if (req.url ) {
+    }
   })
   .listen(8080, () => {
     console.log("Server is running on http://localhost:8080");

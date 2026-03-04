@@ -35,6 +35,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 const http = __importStar(require("node:http"));
 const path = __importStar(require("node:path"));
+const ignoredPaths = ["../www/", "404.html"];
 const publicDir = path.resolve(__dirname, ".."); // dist root after build
 const contentTypes = {
     ".html": "text/html; charset=utf-8",
@@ -49,7 +50,8 @@ const contentTypes = {
 };
 const server = http
     .createServer((req, res) => {
-    console.log(req.url);
+    if (req.url) {
+    }
 })
     .listen(8080, () => {
     console.log("Server is running on http://localhost:8080");
